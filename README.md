@@ -26,8 +26,31 @@ Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data p
 
 ---
 
-## Struktur Folder (Awal)
+## Mock-Up Visual Streamlit (Teks)
+```text
+Sidebar:
++---------------------------+
+| [Upload CSV]             |
+| [Select Day ▼]           |
+| [Select Hour ▼]          |
+| [Select Route ▼]         |
+| [Run Prediction]         |
++---------------------------+
 
+Main Area:
++-------------------------------------------+
+| ML Project Dashboard                      |
+|-------------------------------------------|
+| Table Preview (5 rows sample)            |
+| Predicted Travel Time: XX minutes        |
+| Chart Visualization (Histogram / Line)   |
+| [Download Result Button]                 |
++-------------------------------------------+
+
+---
+
+## Struktur Folder (Awal)
+```text
 ML_PROJECT/
 │
 ├── README.md
