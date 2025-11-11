@@ -49,7 +49,7 @@ Main Area:
 +-------------------------------------------+
 
 Struktur Folder (Awal)
-```text
+
 ML_PROJECT/
 │
 ├── README.md
