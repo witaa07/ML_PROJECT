@@ -1,1 +1,40 @@
-"# ML Project" 
+# ML Project: Prediksi Waktu Tempuh Rute UNSRAT ke Mantos
+
+## Deskripsi Singkat
+Proyek ini bertujuan untuk memprediksi **waktu tempuh perjalanan** dari UNSRAT ke Mantos menggunakan data historis perjalanan.  
+Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data perjalanan dan menampilkan prediksi secara interaktif.
+
+## Minggu 1: Inisiasi & Eksplorasi Data
+- Business Understanding: memprediksi waktu tempuh rute UNSRAT ke Mantos
+- Data Understanding: fitur yang digunakan (Hari, Jam, Rute), target (Menit)
+
+---
+
+## Fitur & Mock-Up Streamlit
+### Input (di sidebar)
+- File CSV berisi data perjalanan (opsional untuk upload dataset besar)
+- Dropdown untuk memilih hari
+- Slider atau input jam keberangkatan
+- Dropdown atau pilihan rute
+- Tombol “Prediksi Waktu Tempuh”
+
+### Output (di main area)
+- Tabel preview data (contoh 5 baris pertama)
+- Prediksi waktu tempuh (Menit)
+- Grafik visualisasi distribusi waktu tempuh
+- Tombol download hasil prediksi (CSV)
+
+---
+
+## Struktur Folder (Awal)
+
+ML_PROJECT/
+│
+├── README.md
+├── app.py              # Streamlit app
+├── requirements.txt
+├── data/               # Dataset
+│   └── dataset.csv
+└── model/              # Model ML (nanti)
+    └── model.pkl
+
