@@ -26,7 +26,7 @@ Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data p
 
 ---
 
-```markdown
+
 ## Mock-Up Visual Streamlit (Teks)
 ```text
 Sidebar:
@@ -48,10 +48,7 @@ Main Area:
 | [Download Result Button]                 |
 +-------------------------------------------+
 
----
-
-```markdown
-## Struktur Folder (Awal)
+Struktur Folder (Awal)
 ```text
 ML_PROJECT/
 │
