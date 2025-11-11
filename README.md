@@ -5,8 +5,8 @@ Proyek ini bertujuan untuk memprediksi **waktu tempuh perjalanan** dari UNSRAT k
 Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data perjalanan dan menampilkan prediksi secara interaktif.
 
 ## Minggu 1: Inisiasi & Eksplorasi Data
-- Business Understanding: memprediksi waktu tempuh rute UNSRAT ke Mantos
-- Data Understanding: fitur yang digunakan (Hari, Jam, Rute), target (Menit)
+- **Business Understanding:** memprediksi waktu tempuh rute UNSRAT ke Mantos
+- **Data Understanding:** fitur yang digunakan (Hari, Jam, Rute), target (Menit)
 
 ---
 
@@ -14,7 +14,7 @@ Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data p
 ### Input (di sidebar)
 - File CSV berisi data perjalanan (opsional untuk upload dataset besar)
 - Dropdown untuk memilih hari
-- Slider atau input jam keberangkatan
+- Slider untuk jam keberangkatan
 - Dropdown atau pilihan rute
 - Tombol “Prediksi Waktu Tempuh”
 
@@ -32,7 +32,7 @@ Sidebar:
 +---------------------------+
 | [Upload CSV]             |
 | [Select Day ▼]           |
-| [Select Hour ▼]          |
+| Select Hour: [---●---------] 14   <-- slider
 | [Select Route ▼]         |
 | [Run Prediction]         |
 +---------------------------+
@@ -50,14 +50,14 @@ Main Area:
 ---
 
 ## Struktur Folder (Awal)
-```text
+
 ML_PROJECT/
 │
 ├── README.md
-├── app.py              # Streamlit app
+├── app.py                # Streamlit app
 ├── requirements.txt
-├── data/               # Dataset
+├── data/                 # Dataset
 │   └── dataset.csv
-└── model/              # Model ML (nanti)
+└── model/                # Model ML (nanti)
     └── model.pkl
 
