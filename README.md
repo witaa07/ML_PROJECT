@@ -1,9 +1,9 @@
-# UNSRAT Weather Assistant 🌦️
+# UNSRAT Weather Assistant 
 Aplikasi prediksi cuaca real-time untuk membantu mahasiswa UNSRAT membuat keputusan harian yang lebih baik — seperti apakah perlu membawa payung, bagaimana suhu beberapa jam ke depan, dan seberapa besar peluang hujan di area kampus.
 
 ---
 
-## 🎯 Tujuan Proyek
+## Tujuan Proyek
 1. Memberikan prediksi cuaca real-time berbasis data API BMKG melalui pipeline n8n → Google Sheets → Streamlit.
 2. Menyediakan rekomendasi langsung (actionable) tanpa pengguna harus membaca data mentah.
 3. Membantu mahasiswa mengambil keputusan harian seperti:
@@ -13,7 +13,7 @@ Aplikasi prediksi cuaca real-time untuk membantu mahasiswa UNSRAT membuat keputu
 
 ---
 
-## 👥 Roles & Tugas Tim
+## Roles & Tugas Tim
 ### **Person 1 — Data Engineer**
 - Membuat pipeline n8n untuk mengambil data cuaca real-time dari API BMKG.
 - Sinkronisasi otomatis ke Google Sheets (cron per 1–6 jam).
@@ -32,5 +32,3 @@ Aplikasi prediksi cuaca real-time untuk membantu mahasiswa UNSRAT membuat keputu
 - Menyiapkan aplikasi untuk deployment.
 
 ---
-
-## 🏗️ Struktur Folder
