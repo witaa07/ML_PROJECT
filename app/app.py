@@ -1,73 +1,97 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from datetime import datetime
+import datetime
 
-# -----------------------------------------
-# PAGE CONFIG
-# -----------------------------------------
+# ===============================
+# CONFIG
+# ===============================
 st.set_page_config(
     page_title="UNSRAT Weather Assistant",
-    page_icon="🌤️",
-    layout="centered"
+    page_icon="⛅",
+    layout="wide"
 )
 
-# -----------------------------------------
+# ===============================
 # HEADER
-# -----------------------------------------
-st.title("UNSRAT Weather Assistant")
-st.write("Prediksi cuaca sederhana untuk membantu mahasiswa UNSRAT membuat keputusan harian.")
-st.caption("Data saat ini masih dummy. Integrasi Google Sheets akan ditambahkan setelah pipeline n8n aktif.")
+# ===============================
+st.title("UNSRAT Weather Assistant ⛅")
+st.write(
+    "Prediksi cuaca sederhana untuk membantu mahasiswa UNSRAT membuat keputusan harian.\n"
+    "Data saat ini masih dummy. Integrasi Google Sheets akan ditambahkan setelah pipeline n8n aktif."
+)
 
-st.divider()
+st.markdown("---")
 
-# -----------------------------------------
-# LAST UPDATE (Dummy)
-# -----------------------------------------
+# ===============================
+# LAST UPDATE (DUMMY)
+# ===============================
 st.subheader("Last Update")
-current_time = datetime.now().strftime("%d %B %Y • %H:%M WITA")
-st.info(f"Data diperbarui: **{current_time}**")
 
-# -----------------------------------------
-# RECOMMENDATION (Dummy)
-# -----------------------------------------
+last_update = datetime.datetime.now().strftime("%d %B %Y • %H:%M WITA")
+
+st.info(f"**Data diperbarui:** {last_update}", icon="📅")
+
+# ===============================
+# REKOMENDASI CEPAT (DUMMY)
+# ===============================
 st.subheader("Rekomendasi Cepat")
-st.write("Berdasarkan kondisi cuaca saat ini (dummy):")
 
-st.success("Kemungkinan hujan 40% → Disarankan membawa payung kecil.")
+rain_prob = 40  # dummy
+
+if rain_prob >= 70:
+    rec = "Kemungkinan hujan tinggi (>70%) → Wajib membawa payung!"
+    st.error(rec, icon="🌧️")
+elif rain_prob >= 40:
+    rec = "Kemungkinan hujan 40-70% → Disarankan membawa payung."
+    st.warning(rec, icon="🌦️")
+else:
+    rec = "Kemungkinan hujan rendah (<40%) → Tidak perlu payung."
+    st.success(rec, icon="🌞")
+
+# ===============================
+# FORECAST (DUMMY)
+# ===============================
+st.markdown("### Perkiraan Cuaca")
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Suhu", "29°C")
-col2.metric("Kelembapan", "76%")
-col3.metric("Curah Hujan", "0.8 mm")
 
-st.divider()
+with col1:
+    st.metric("1 Jam ke Depan", "Hujan Ringan", "40%")
 
-# -----------------------------------------
-# HOURLY FORECAST (Dummy)
-# -----------------------------------------
-st.subheader("Perkiraan Cuaca Per Jam (Dummy)")
+with col2:
+    st.metric("3 Jam ke Depan", "Berawan", "-10%")
 
-df = pd.DataFrame({
-    "Jam": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00"],
-    "Suhu (°C)": np.random.randint(26, 32, 6),
-    "Curah Hujan (mm)": np.random.randint(0, 3, 6)
+with col3:
+    st.metric("6 Jam ke Depan", "Berawan Tebal", "+20%")
+
+# ===============================
+# DUMMY CHART
+# ===============================
+st.markdown("### Grafik Curah Hujan (Dummy)")
+
+dummy_data = np.random.randint(0, 10, size=12)
+dummy_df = pd.DataFrame({
+    "Jam": [f"{i}:00" for i in range(12)],
+    "Curah Hujan (mm)": dummy_data
 })
 
-st.line_chart(df.set_index("Jam")["Suhu (°C)"])
+st.line_chart(dummy_df, x="Jam", y="Curah Hujan (mm)")
 
-st.divider()
+# ===============================
+# TOMBOL PALSU (BUTTON)
+# ===============================
+st.markdown("### Aksi Lainnya")
 
-# -----------------------------------------
-# WEEKLY INSIGHT (Dummy)
-# -----------------------------------------
-st.subheader("Tren Suhu Mingguan (Dummy)")
+btn1, btn2 = st.columns(2)
 
-dummy_week = pd.DataFrame({
-    "Tanggal": pd.date_range(start="2024-01-01", periods=7),
-    "Suhu": np.random.randint(27, 32, 7)
-})
+with btn1:
+    st.button("Refresh (Dummy)")
 
-st.bar_chart(dummy_week.set_index("Tanggal")["Suhu"])
+with btn2:
+    st.button("Lihat Data Mentah (Dummy)")
 
-st.caption("Analisis akan diperbarui setelah dataset historis selesai ditemukan.")
+# ===============================
+# CATATAN
+# ===============================
+st.caption("📌 Semua data di atas masih dummy. Data asli akan otomatis ditarik dari Google Sheets via n8n ketika pipeline sudah aktif.")
