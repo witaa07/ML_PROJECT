@@ -1,62 +1,34 @@
-# ML Project: Prediksi Waktu Tempuh Rute UNSRAT ke Mantos
-
-## Deskripsi Singkat
-Proyek ini bertujuan untuk memprediksi **waktu tempuh perjalanan** dari UNSRAT ke Mantos menggunakan data historis perjalanan.  
-Aplikasi dibuat dengan **Streamlit** untuk memudahkan pengguna meng-input data perjalanan dan menampilkan prediksi secara interaktif.
-
-## Minggu 1: Inisiasi & Eksplorasi Data
-- **Business Understanding:** memprediksi waktu tempuh rute UNSRAT ke Mantos
-- **Data Understanding:** fitur yang digunakan (Hari, Jam, Rute), target (Menit)
+# UNSRAT Weather Assistant 
+Aplikasi prediksi cuaca real-time untuk membantu mahasiswa UNSRAT membuat keputusan harian yang lebih baik — seperti apakah perlu membawa payung, bagaimana suhu beberapa jam ke depan, dan seberapa besar peluang hujan di area kampus.
 
 ---
 
-## Fitur & Mock-Up Streamlit
-### Input (di sidebar)
-- File CSV berisi data perjalanan (opsional untuk upload dataset besar)
-- Dropdown untuk memilih hari
-- Slider untuk jam keberangkatan
-- Dropdown atau pilihan rute
-- Tombol “Prediksi Waktu Tempuh”
-
-### Output (di main area)
-- Tabel preview data (contoh 5 baris pertama)
-- Prediksi waktu tempuh (Menit)
-- Grafik visualisasi distribusi waktu tempuh
-- Tombol download hasil prediksi (CSV)
+## Tujuan Proyek
+1. Memberikan prediksi cuaca real-time berbasis data API BMKG melalui pipeline n8n → Google Sheets → Streamlit.
+2. Menyediakan rekomendasi langsung (actionable) tanpa pengguna harus membaca data mentah.
+3. Membantu mahasiswa mengambil keputusan harian seperti:
+   - “Perlu bawa payung atau tidak?”
+   - “Bagaimana suhu sore hari untuk kegiatan kampus?”
+   - “Apakah hujan akan turun dalam 1–3 jam ke depan?”
 
 ---
 
+## Roles & Tugas Tim
+### **Person 1 — Data Engineer**
+- Membuat pipeline n8n untuk mengambil data cuaca real-time dari API BMKG.
+- Sinkronisasi otomatis ke Google Sheets (cron per 1–6 jam).
+- Menjamin data selalu terbaru dan tidak basi.
 
-## Mock-Up Visual Streamlit (Teks)
-```text
-Sidebar:
-+---------------------------+
-| [Upload CSV]             |
-| [Select Day ▼]           |
-| Select Hour: [---●---------] 14   <-- slider
-| [Select Route ▼]         |
-| [Run Prediction]         |
-+---------------------------+
+### **Person 2 — Data Analyst & Modeler**
+- Mengumpulkan data historis dari BMKG, Kaggle, NOAA.
+- Melakukan EDA, data cleaning, dan feature engineering.
+- Melatih model prediksi cuaca (temperature, rain probability, dll).
+- Menyediakan output model untuk integrasi ke Streamlit.
 
-Main Area:
-+-------------------------------------------+
-| ML Project Dashboard                      |
-|-------------------------------------------|
-| Table Preview (5 rows sample)            |
-| Predicted Travel Time: XX minutes        |
-| Chart Visualization (Histogram / Line)   |
-| [Download Result Button]                 |
-+-------------------------------------------+
+### **Person 3 — Project Manager & Deployment (Sabdawita)**
+- Membuat kerangka UI Streamlit (dummy terlebih dahulu).
+- Menyusun interaksi pengguna + rekomendasi.
+- Integrasi model dan data setelah siap.
+- Menyiapkan aplikasi untuk deployment.
 
-Struktur Folder (Awal)
-
-ML_PROJECT/
-│
-├── README.md
-├── app.py                # Streamlit app
-├── requirements.txt
-├── data/                 # Dataset
-│   └── dataset.csv
-└── model/                # Model ML (nanti)
-    └── model.pkl
-
+---
