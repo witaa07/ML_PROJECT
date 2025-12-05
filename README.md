@@ -85,7 +85,7 @@
     <h2>📱 Fitur Aplikasi</h2>
     <ul>
         <li><b>Hybrid Input:</b> Menerima input otomatis dari n8n atau input manual untuk simulasi.</li>
-        <li><b>Smart Recommendation:</b> Menerjemahkan angka prediksi menjadi saran bahasa manusia. Contoh: <i>"🌦️ Sumuk (Gerah): Hujan tapi panas."</i></li>
+        <li><b>Smart Recommendation:</b> Menerjemahkan angka prediksi menjadi saran bahasa manusia. Contoh: <i>"☔ Sedia Payung/Jas Hujan: Akan turun hujan ringan. Lantai koridor mungkin licin."</i></li>
         <li><b>Mode Malam:</b> Dukungan tema gelap untuk kenyamanan visual.</li>
     </ul>
 </section>
